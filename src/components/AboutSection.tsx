@@ -46,34 +46,24 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden"
+      className="relative"
       style={{ background: "#E5E6E0", zIndex: 1 }}
     >
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "url('/bg-texture.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.25,
-        }}
-      />
 
       <div
-        className="relative max-w-[1600px] mx-auto px-6 lg:px-20"
+        className="relative max-w-[1920px] mx-0 pl-20"
         style={{ paddingTop: "80px", paddingBottom: "120px", minHeight: "700px" }}
       >
         {/* ── LEFT TEXT COLUMN ── */}
-        <div ref={textRef} className="relative z-10" style={{ maxWidth: "44%" }}>
+        <div ref={textRef} className="relative z-10" style={{ maxWidth: "48%" }}>
           {/* Faded script overlay */}
           <p
             className="font-script select-none leading-none"
             style={{
               color: "#541115",
-              opacity: 0.22,
-              fontSize: "clamp(64px, 9vw, 160px)",
-              marginBottom: "-0.15em",
+              opacity: 0.28,
+              fontSize: "clamp(72px, 10.4vw, 200px)",
+              marginBottom: "-0.3em",
               lineHeight: 1,
             }}
           >
@@ -85,9 +75,9 @@ export default function AboutSection() {
             className="font-body font-medium leading-none"
             style={{
               color: "#541115",
-              fontSize: "clamp(52px, 6.5vw, 96px)",
-              letterSpacing: "0.04em",
-              marginBottom: "clamp(24px, 3vw, 48px)",
+              fontSize: "clamp(48px, 5vw, 96px)",
+              letterSpacing: "3.84px",
+              marginBottom: "clamp(24px, 2.5vw, 40px)",
             }}
           >
             Másképp
@@ -96,7 +86,7 @@ export default function AboutSection() {
           {/* Body text */}
           <p
             className="font-body leading-relaxed mb-5"
-            style={{ color: "#541115", opacity: 0.8, fontSize: "clamp(14px, 1.25vw, 20px)", maxWidth: "520px" }}
+            style={{ color: "#541115", opacity: 0.8, fontSize: "24px", maxWidth: "clamp(340px, 58vw, 1100px)" }}
           >
             A Trüffel az a hely, ahol vidáman köszönnek a torták és a fagylaltok
             tetejéről a valódi gyümölcsök, az igazi csokoládék, a hamisítatlan
@@ -104,7 +94,7 @@ export default function AboutSection() {
           </p>
           <p
             className="font-body leading-relaxed"
-            style={{ color: "#541115", opacity: 0.8, fontSize: "clamp(14px, 1.25vw, 20px)", maxWidth: "520px" }}
+            style={{ color: "#541115", opacity: 0.8, fontSize: "24px", maxWidth: "clamp(340px, 58vw, 1100px)" }}
           >
             Ahol jó megpihenni, elidőzni, valódi ízeket, különleges aromákat
             felfedezni. Ahol nem kell megalkudni, mert a sütemények természetes
@@ -115,14 +105,14 @@ export default function AboutSection() {
 
         {/* ── RIGHT PHOTO COLLAGE ── */}
 
-        {/* Photo 2 (server/restaurant) — top right */}
+        {/* Photo 1 (restaurant) — top right */}
         <div
           ref={photo1Ref}
           className="absolute"
           style={{
-            left: "58%",
-            top: "0px",
-            width: "clamp(280px, 36vw, 700px)",
+            left: "57%",
+            top: "clamp(120px, 12vw, 240px)",
+            width: "clamp(260px, 36vw, 695px)",
             zIndex: 2,
           }}
         >
@@ -135,14 +125,14 @@ export default function AboutSection() {
           />
         </div>
 
-        {/* Photo 1 (pastry table) — lower center, overlapping photo 2 */}
+        {/* Photo 2 (pastry table) — lower, overlapping photo 1 */}
         <div
           ref={photo2Ref}
           className="absolute"
           style={{
-            left: "38%",
-            top: "clamp(300px, 38vw, 580px)",
-            width: "clamp(240px, 30vw, 580px)",
+            left: "40%",
+            top: "clamp(360px, 38vw, 580px)",
+            width: "clamp(220px, 29vw, 571px)",
             zIndex: 3,
           }}
         >
@@ -156,7 +146,7 @@ export default function AboutSection() {
         </div>
 
         {/* Spacer so the section is tall enough for the absolutely-positioned photos */}
-        <div style={{ paddingTop: "clamp(400px, 50vw, 750px)" }} />
+        <div style={{ paddingTop: "clamp(160px, 22vw, 380px)" }} />
       </div>
     </section>
   );

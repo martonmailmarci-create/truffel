@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost, Great_Vibes } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
@@ -39,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${jost.variable} ${greatVibes.variable} antialiased`}
       >
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
         <div className="grain-overlay" aria-hidden="true" />
       </body>
     </html>

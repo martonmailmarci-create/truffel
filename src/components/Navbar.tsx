@@ -72,7 +72,7 @@ export default function Navbar() {
             <img
               src="/logo-dark.svg"
               alt="Trüffel"
-              className="h-[38px] w-auto"
+              className="h-[44px] w-auto"
             />
           </a>
 

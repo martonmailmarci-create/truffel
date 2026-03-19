@@ -7,7 +7,18 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main style={{ background: "#E5E6E0" }}>
+    <main style={{ background: "#E5E6E0", position: "relative" }}>
+      <div style={{
+        position: "fixed",
+        inset: 0,
+        backgroundImage: "url('/bg-texture.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        opacity: 0.3,
+        pointerEvents: "none",
+        zIndex: 0,
+      }} />
       <Navbar />
       <Hero />
       <AboutSection />

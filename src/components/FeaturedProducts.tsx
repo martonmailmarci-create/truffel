@@ -9,10 +9,10 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const products = [
-  { id: 1, name: "Fertődi Kirsch torta", price: "13.000 Ft", img: "/cake1.jpg" },
-  { id: 2, name: "Epres Ruby torta",     price: "13.000 Ft", img: "/cake2.jpg" },
-  { id: 3, name: "Trüffel torta",        price: "13.000 Ft", img: "/cake3.jpg" },
-  { id: 4, name: "Almás mákos torta",    price: "13.000 Ft", img: "/cake4.jpg" },
+  { id: 1, name: "Fertődi Kirsch torta", price: "13.000 Ft", img: "/cake1.png" },
+  { id: 2, name: "Epres Ruby torta",     price: "13.000 Ft", img: "/cake2.png" },
+  { id: 3, name: "Trüffel torta",        price: "13.000 Ft", img: "/cake3.png" },
+  { id: 4, name: "Almás mákos torta",    price: "13.000 Ft", img: "/cake4.png" },
 ];
 
 export default function FeaturedProducts() {
@@ -63,19 +63,9 @@ export default function FeaturedProducts() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 px-6 lg:px-20 overflow-hidden"
+      className="relative pt-4 pb-24 px-6 lg:px-20"
       style={{ background: "#E5E6E0" }}
     >
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "url('/bg-texture.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.25,
-        }}
-      />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
         {/* Heading */}
@@ -92,32 +82,44 @@ export default function FeaturedProducts() {
           </p>
         </div>
 
-        {/* Product grid */}
-        <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-10">
-          {products.map((product) => (
-            <div key={product.id} className="product-card group cursor-pointer">
-              <div className="overflow-hidden rounded-sm aspect-square mb-4 bg-white/40">
-                <Image
-                  src={product.img}
-                  alt={product.name}
-                  width={350}
-                  height={350}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+        {/* Product grid with arrows */}
+        <div className="relative flex items-center gap-4">
+          {/* Left arrow */}
+          <button className="flex-shrink-0 text-[#541115]/40 hover:text-[#541115] transition-colors text-[40px] leading-none pb-1">
+            &#8249;
+          </button>
+
+          <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 flex-1">
+            {products.map((product) => (
+              <div key={product.id} className="product-card group cursor-pointer text-center">
+                <div className="mb-5">
+                  <Image
+                    src={product.img}
+                    alt={product.name}
+                    width={290}
+                    height={290}
+                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <p className="font-body text-[#541115] text-[15px] tracking-[0.04em] mb-2">
+                  {product.name}
+                </p>
+                <p className="font-body text-[#541115] text-[14px]">{product.price}</p>
               </div>
-              <p className="font-body text-[#541115] text-[13px] tracking-[0.05em] mb-1">
-                {product.name}
-              </p>
-              <p className="font-body text-[#541115]/60 text-[12px]">{product.price}</p>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Right arrow */}
+          <button className="flex-shrink-0 text-[#541115]/40 hover:text-[#541115] transition-colors text-[40px] leading-none pb-1">
+            &#8250;
+          </button>
         </div>
 
         {/* CTA button */}
         <div className="mt-14 flex justify-center">
           <a
             href="#"
-            className="inline-block px-10 py-3 border border-[#541115] text-[#541115] font-body text-[12px] uppercase tracking-[0.2em] hover:bg-[#541115] hover:text-white transition-all duration-300"
+            className="inline-block px-16 py-4 border border-[#541115] text-[#541115] font-body text-[13px] uppercase tracking-[0.25em] hover:bg-[#541115] hover:text-white transition-all duration-300"
           >
             Összes termék
           </a>

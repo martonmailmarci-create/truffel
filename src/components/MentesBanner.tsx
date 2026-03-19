@@ -45,19 +45,9 @@ export default function MentesBanner() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 px-6 lg:px-20 overflow-hidden"
+      className="relative py-24 px-6 lg:px-20"
       style={{ background: "#E5E6E0" }}
     >
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "url('/bg-texture.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.25,
-        }}
-      />
 
       <div className="relative z-10 max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
         {/* Image */}

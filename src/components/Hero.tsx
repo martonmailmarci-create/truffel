@@ -2,6 +2,9 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -35,6 +38,18 @@ export default function Hero() {
         { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" },
         "-=0.7"
       );
+
+      // Parallax: fork moves up faster than scroll
+      gsap.to(forkRef.current, {
+        y: -380,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -58,16 +73,6 @@ export default function Hero() {
         className="relative min-h-screen"
         style={{ background: "#E5E6E0", overflow: "visible", zIndex: 2 }}
       >
-        {/* Background texture */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: "url('/bg-texture.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            opacity: 0.4,
-          }}
-        />
 
         {/*
           Logo — Figma: top 199px in 908px hero (22vh).
@@ -76,13 +81,25 @@ export default function Hero() {
         <div
           ref={logoRef}
           className="absolute left-1/2 -translate-x-1/2 z-10 opacity-0"
-          style={{ top: "38vh" }}
+          style={{ top: "22vh" }}
         >
+          {/* Subtle glow behind logo */}
+          <div style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "130%",
+            height: "160%",
+            background: "radial-gradient(ellipse at center, rgba(253,250,246,0.55) 0%, transparent 70%)",
+            pointerEvents: "none",
+            zIndex: -1,
+          }} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo-dark.svg"
             alt="Trüffel"
-            style={{ width: "clamp(300px, 35vw, 671px)", height: "auto" }}
+            style={{ width: "clamp(280px, 35vw, 671px)", height: "auto", display: "block" }}
           />
         </div>
 
@@ -111,8 +128,7 @@ export default function Hero() {
             top: "52vh",
             left: "50%",
             transform: "translateX(-50%)",
-            width: "clamp(220px, 20vw, 450px)",
-            /* height = width × (797/266) ≈ width × 2.996 */
+            width: "clamp(160px, 14vw, 320px)",
             aspectRatio: "266 / 797",
             overflow: "hidden",
             zIndex: 20,
@@ -130,6 +146,7 @@ export default function Hero() {
               top: "-16.84%",
               maxWidth: "none",
               display: "block",
+              filter: "drop-shadow(0px 8px 24px rgba(60,30,10,0.18))",
             }}
           />
         </div>
