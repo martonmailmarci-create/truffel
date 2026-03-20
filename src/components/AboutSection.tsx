@@ -15,29 +15,44 @@ export default function AboutSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Entry animations — opacity only, no y, so parallax owns y exclusively
       gsap.fromTo(
         textRef.current,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, y: 0, duration: 1.0, ease: "power2.out",
-          scrollTrigger: { trigger: sectionRef.current, start: "top 85%" },
-        }
+        { opacity: 0 },
+        { opacity: 1, duration: 1.0, ease: "power2.out",
+          scrollTrigger: { trigger: sectionRef.current, start: "top 85%" } }
       );
       gsap.fromTo(
         photo1Ref.current,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1, y: 0, duration: 1.0, ease: "power2.out",
-          scrollTrigger: { trigger: sectionRef.current, start: "top 80%" },
-        }
+        { opacity: 0 },
+        { opacity: 1, duration: 1.0, ease: "power2.out",
+          scrollTrigger: { trigger: sectionRef.current, start: "top 80%" } }
       );
       gsap.fromTo(
         photo2Ref.current,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, y: 0, duration: 1.0, delay: 0.2, ease: "power2.out",
-          scrollTrigger: { trigger: sectionRef.current, start: "top 75%" },
-        }
+        { opacity: 0 },
+        { opacity: 1, duration: 1.0, delay: 0.2, ease: "power2.out",
+          scrollTrigger: { trigger: sectionRef.current, start: "top 75%" } }
+      );
+
+      // Parallax — each element moves at a different speed for depth
+      gsap.fromTo(
+        textRef.current,
+        { y: 0 },
+        { y: -70, ease: "none",
+          scrollTrigger: { trigger: sectionRef.current, start: "top bottom", end: "bottom top", scrub: 2, invalidateOnRefresh: true } }
+      );
+      gsap.fromTo(
+        photo1Ref.current,
+        { y: 0 },
+        { y: -120, ease: "none",
+          scrollTrigger: { trigger: sectionRef.current, start: "top bottom", end: "bottom top", scrub: 1.5, invalidateOnRefresh: true } }
+      );
+      gsap.fromTo(
+        photo2Ref.current,
+        { y: 0 },
+        { y: -90, ease: "none",
+          scrollTrigger: { trigger: sectionRef.current, start: "top bottom", end: "bottom top", scrub: 1.8, invalidateOnRefresh: true } }
       );
     }, sectionRef);
     return () => ctx.revert();
@@ -47,7 +62,7 @@ export default function AboutSection() {
     <section
       ref={sectionRef}
       className="relative"
-      style={{ background: "#E5E6E0", zIndex: 1 }}
+      style={{ background: "#EDEDEB", zIndex: 1 }}
     >
 
       <div
@@ -101,6 +116,13 @@ export default function AboutSection() {
             hozzávalók felhasználásával, adalékanyagok nélkül, szeretettel
             készülnek.
           </p>
+
+          <a
+            href="#"
+            className="inline-block mt-10 px-16 py-4 border border-[#541115] text-[#541115] font-body text-[13px] uppercase tracking-[0.25em] hover:bg-[#541115] hover:text-white transition-all duration-300"
+          >
+            Rólunk
+          </a>
         </div>
 
         {/* ── RIGHT PHOTO COLLAGE ── */}

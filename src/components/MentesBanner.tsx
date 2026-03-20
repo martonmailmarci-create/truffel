@@ -46,7 +46,7 @@ export default function MentesBanner() {
     <section
       ref={sectionRef}
       className="relative py-24 px-6 lg:px-20"
-      style={{ background: "#E5E6E0" }}
+      style={{ background: "#EDEDEB" }}
     >
 
       <div className="relative z-10 max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 items-center">
@@ -63,10 +63,10 @@ export default function MentesBanner() {
 
         {/* Text */}
         <div ref={textRef}>
-          <h2 className="font-body font-medium text-[#541115] text-[clamp(28px,3vw,48px)] leading-tight mb-6">
+          <h2 className="font-body font-medium text-[#541115] leading-tight mb-6" style={{ fontSize: "clamp(28px, 3vw, 48px)" }}>
             Nem kell megalkudni, mentes sem jelent kevesebbet
           </h2>
-          <p className="font-body text-[#541115]/70 text-[16px] leading-relaxed mb-6">
+          <p className="font-body text-[#541115]/70 text-[24px] leading-relaxed mb-6">
             &bdquo;Az országban az elsők között készítettünk cukormentes, laktóz- és
             lisztmentes süteményeket. Mára bátran kijelenthetjük: sem íz, sem
             minőség tekintetében nem kell megalkudnia annak, aki valamilyen
@@ -87,7 +87,7 @@ export default function MentesBanner() {
           </ul>
           <a
             href="#"
-            className="inline-block px-10 py-3 border border-[#541115] text-[#541115] font-body text-[12px] uppercase tracking-[0.2em] hover:bg-[#541115] hover:text-white transition-all duration-300"
+            className="inline-block px-16 py-4 border border-[#541115] text-[#541115] font-body text-[13px] uppercase tracking-[0.25em] hover:bg-[#541115] hover:text-white transition-all duration-300"
           >
             Mentes termékeink
           </a>

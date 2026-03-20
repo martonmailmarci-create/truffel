@@ -61,7 +61,7 @@ export default function Navbar() {
         ref={navRef}
         className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
           scrolled
-            ? "bg-[#E5E6E0]/95 backdrop-blur-sm shadow-sm"
+            ? "bg-[#EDEDEB]/95 backdrop-blur-sm shadow-sm"
             : "bg-[rgba(229,230,224,0.2)] backdrop-blur-sm"
         }`}
       >
@@ -139,7 +139,7 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           ref={mobileMenuRef}
-          className="fixed inset-0 bg-[#E5E6E0] z-[105] flex flex-col items-center justify-center gap-8"
+          className="fixed inset-0 bg-[#EDEDEB] z-[105] flex flex-col items-center justify-center gap-8"
         >
           {navLinks.map((link) => (
             <a

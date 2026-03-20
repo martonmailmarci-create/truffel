@@ -60,12 +60,12 @@ export default function Newsletter() {
 
         <h2
           className="font-display text-white-warm font-light leading-[1.15]"
-          style={{ fontSize: "clamp(26px, 3.5vw, 38px)", letterSpacing: "-0.01em" }}
+          style={{ fontSize: "clamp(48px, 5vw, 96px)", letterSpacing: "-0.01em" }}
         >
           Légy az első, aki megtudja
         </h2>
 
-        <p className="font-body text-white-warm/45 text-[13px] mt-5 leading-[1.9] max-w-[380px] mx-auto">
+        <p className="font-body text-white-warm/45 text-[24px] mt-5 leading-[1.9] max-w-[380px] mx-auto">
           Új kreációk, szezonális ajánlatok és exkluzív meglepetések — egyenesen
           a Trüffel műhelyéből a postaládádba.
         </p>
@@ -90,7 +90,7 @@ export default function Newsletter() {
           />
           <button
             type="submit"
-            className="bg-blush-deep text-white-warm font-body text-[10px] uppercase tracking-[0.22em] px-8 py-4 hover:bg-blush transition-colors duration-300 shrink-0"
+            className="bg-blush-deep text-white-warm font-body text-[13px] uppercase tracking-[0.25em] px-8 py-4 hover:bg-blush transition-colors duration-300 shrink-0"
           >
             Feliratkozás
           </button>

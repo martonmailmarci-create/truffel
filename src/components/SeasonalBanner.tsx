@@ -79,7 +79,7 @@ export default function SeasonalBanner() {
           >
             <h2
               className="font-display text-anthracite font-light leading-[1.1]"
-              style={{ fontSize: "clamp(28px, 3.5vw, 46px)", letterSpacing: "-0.015em" }}
+              style={{ fontSize: "clamp(48px, 5vw, 96px)", letterSpacing: "-0.015em" }}
             >
               OMEGAJAM<br />
               <span className="italic text-gold">kollekció</span>
@@ -92,7 +92,7 @@ export default function SeasonalBanner() {
               </svg>
             </div>
 
-            <p className="font-body text-anthracite/60 text-[14px] leading-[1.85] max-w-sm">
+            <p className="font-body text-anthracite/60 text-[24px] leading-[1.85] max-w-sm">
               Ahol az íz találkozik az egészséggel — 3 különleges lekvár, 4 ízletes desszert,
               60% valódi gyümölcs minden falatban.
             </p>
@@ -105,7 +105,7 @@ export default function SeasonalBanner() {
 
             <a
               href="#"
-              className="inline-block bg-anthracite text-white-warm font-body text-[11px] uppercase tracking-[0.2em] px-10 py-[15px] hover:bg-anthracite-mid transition-colors duration-300"
+              className="inline-block bg-anthracite text-white-warm font-body text-[13px] uppercase tracking-[0.25em] px-10 py-[15px] hover:bg-anthracite-mid transition-colors duration-300"
             >
               Felfedezem
             </a>

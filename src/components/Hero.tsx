@@ -34,22 +34,29 @@ export default function Hero() {
 
       tl.fromTo(
         forkRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" },
+        { opacity: 0 },
+        { opacity: 1, duration: 1.0, ease: "power2.out" },
         "-=0.7"
       );
 
-      // Parallax: fork moves up faster than scroll
-      gsap.to(forkRef.current, {
-        y: -380,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
+      // Parallax: fork moves up faster than scroll.
+      // Uses fromTo with explicit y: 0 start so there is no conflict
+      // with any other tween touching y.
+      gsap.fromTo(
+        forkRef.current,
+        { y: 0 },
+        {
+          y: -380,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.5,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -71,7 +78,7 @@ export default function Hero() {
       <section
         ref={sectionRef}
         className="relative min-h-screen"
-        style={{ background: "#E5E6E0", overflow: "visible", zIndex: 2 }}
+        style={{ background: "#EDEDEB", overflow: "visible", zIndex: 2 }}
       >
 
         {/*
@@ -130,25 +137,28 @@ export default function Hero() {
             transform: "translateX(-50%)",
             width: "clamp(160px, 14vw, 320px)",
             aspectRatio: "266 / 797",
-            overflow: "hidden",
+            overflow: "visible",
             zIndex: 20,
+            filter: "drop-shadow(0px 8px 24px rgba(60,30,10,0.18))",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/fork-cake.jpg"
-            alt="Trüffel sütemény"
-            style={{
-              position: "absolute",
-              width: "652.89%",
-              height: "122.20%",
-              left: "-276.45%",
-              top: "-16.84%",
-              maxWidth: "none",
-              display: "block",
-              filter: "drop-shadow(0px 8px 24px rgba(60,30,10,0.18))",
-            }}
-          />
+          {/* Inner div handles the crop */}
+          <div style={{ width: "100%", height: "100%", overflow: "hidden", position: "relative" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/fork-cake.jpg"
+              alt="Trüffel sütemény"
+              style={{
+                position: "absolute",
+                width: "652.89%",
+                height: "122.20%",
+                left: "-276.45%",
+                top: "-16.84%",
+                maxWidth: "none",
+                display: "block",
+              }}
+            />
+          </div>
         </div>
       </section>
     </>

@@ -98,7 +98,7 @@ export default function WeddingSection() {
 
           <h2
             className="font-display text-anthracite font-light leading-[1.1]"
-            style={{ fontSize: "clamp(30px, 4vw, 52px)", letterSpacing: "-0.02em" }}
+            style={{ fontSize: "clamp(48px, 5vw, 96px)", letterSpacing: "-0.02em" }}
           >
             Az esküvő<br />
             <span className="italic text-blush-deep">legédesebb</span> pillanatai
@@ -112,7 +112,7 @@ export default function WeddingSection() {
             </svg>
           </div>
 
-          <p className="font-body text-anthracite/55 text-[14px] leading-[1.9] max-w-sm">
+          <p className="font-body text-anthracite/55 text-[24px] leading-[1.9] max-w-sm">
             Tizenöt éves tapasztalattal, évi több mint 200 esküvő
             lebonyolításában segítünk. Ingyenes személyes kóstoló,
             virágdekorációkkal összehangolt édességek, helyszínre szállítás.
@@ -135,7 +135,7 @@ export default function WeddingSection() {
 
           <a
             href="#"
-            className="inline-block mt-10 bg-anthracite text-white-warm font-body text-[11px] uppercase tracking-[0.2em] px-10 py-[15px] hover:bg-anthracite-mid transition-colors duration-300"
+            className="inline-block mt-10 bg-anthracite text-white-warm font-body text-[13px] uppercase tracking-[0.25em] px-10 py-[15px] hover:bg-anthracite-mid transition-colors duration-300"
           >
             Időpontot foglalok
           </a>

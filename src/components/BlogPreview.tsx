@@ -71,14 +71,14 @@ export default function BlogPreview() {
             <span className="font-script text-blush-deep text-[26px] block mb-2">naprakész</span>
             <h2
               className="font-display text-anthracite font-light"
-              style={{ fontSize: "clamp(28px, 3.5vw, 46px)", letterSpacing: "-0.015em" }}
+              style={{ fontSize: "clamp(48px, 5vw, 96px)", letterSpacing: "-0.015em" }}
             >
               Legfrissebb híreink
             </h2>
           </div>
           <a
             href="#"
-            className="hidden md:flex items-center gap-2 font-body text-[11px] uppercase tracking-[0.22em] text-anthracite/40 hover:text-anthracite transition-colors duration-300 group"
+            className="hidden md:flex items-center gap-2 font-body text-[13px] uppercase tracking-[0.25em] text-anthracite/40 hover:text-anthracite transition-colors duration-300 group"
           >
             Összes bejegyzés
             <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">→</span>
@@ -107,7 +107,7 @@ export default function BlogPreview() {
               >
                 {featured.title}
               </h3>
-              <p className="font-body text-anthracite/55 text-[14px] leading-[1.8] mt-4 max-w-md">
+              <p className="font-body text-anthracite/55 text-[24px] leading-[1.8] mt-4 max-w-md">
                 {featured.excerpt}
               </p>
               <div className="flex items-center gap-4 mt-8">

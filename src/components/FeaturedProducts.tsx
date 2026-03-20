@@ -64,19 +64,19 @@ export default function FeaturedProducts() {
     <section
       ref={sectionRef}
       className="relative pt-4 pb-24 px-6 lg:px-20"
-      style={{ background: "#E5E6E0" }}
+      style={{ background: "#EDEDEB" }}
     >
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
         {/* Heading */}
         <div ref={headingRef} className="text-center mb-16">
-          <p className="font-script text-[#541115]/30 text-[80px] leading-none -mb-8 select-none">
+          <p className="font-script text-[#541115]/30 leading-none -mb-14 select-none" style={{ fontSize: "clamp(60px, 7vw, 100px)" }}>
             Kiemelt
           </p>
-          <h2 className="font-body text-[#541115] text-[clamp(36px,4vw,64px)] uppercase tracking-[0.15em] font-medium">
+          <h2 className="font-body text-[#541115] font-medium" style={{ fontSize: "clamp(48px, 5vw, 96px)", letterSpacing: "3.84px" }}>
             Termékeink
           </h2>
-          <p className="mt-4 font-body text-[#541115]/70 text-[15px] max-w-[620px] mx-auto leading-relaxed">
+          <p className="mt-4 font-body text-[#541115]/70 text-[24px] max-w-[900px] mx-auto leading-relaxed">
             A Trüffel az a hely, ahol vidáman köszönnek a torták és a fagylaltok
             tetejéről a valódi gyümölcsök, az igazi csokoládék, a hamisítatlan tejszínhabok.
           </p>

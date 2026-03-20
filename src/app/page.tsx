@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main style={{ background: "#E5E6E0", position: "relative" }}>
+    <main style={{ background: "#EDEDEB", position: "relative" }}>
       <div style={{
         position: "fixed",
         inset: 0,
